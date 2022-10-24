@@ -1,0 +1,41 @@
+.modal-block{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 50;
+    background-color: rgba(42, 42, 42, 0.75);
+}
+
+.modal-elt{
+    position: relative;
+    width: 75%;
+    height: auto;
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+}
+
+.modal-closeBtn{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+.modal-isValid{
+    color: rgb(59, 165, 70);
+}
+
+button{
+    padding: 1rem 2rem;
+    border-radius: 40px;
+    border: 1px solid rgba(0,0,0, 0.2);
+}
