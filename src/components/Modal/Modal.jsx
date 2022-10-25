@@ -8,8 +8,9 @@ import { Fragment, useRef } from 'react';
  * It's a modal that displays a success message when an employee is added
  * @returns A modal component that is rendered when the isSaved state is true.
  */
-export const  Modal = ({ isOpen, toggleModal, redirect, redirectText }) => {
+export const  Modal = ({ isOpen, toggleModal, content }) => {
   const closeButton = useRef(null);
+
 
   if(isOpen){
     return (
@@ -35,19 +36,18 @@ export const  Modal = ({ isOpen, toggleModal, redirect, redirectText }) => {
         >
           <Xmark
             ref={closeButton}
-            className="modal-closeBtn"
-            onClick={() => toggleModal()}
+            toggleModal={toggleModal}
           />
-          <CheckCircleIcon className="modal-isValid" />
-          <Dialog.Title className="modal-title">Success!</Dialog.Title>
-          <p>Employee added successfully!</p>
-          <a
-            href={redirect}
+          <CheckCircleIcon/>
+          <Dialog.Title className="modal-title">{content.modalTitle}</Dialog.Title>
+          <p>{content.modalText}</p>
+          <NavLink
+            to={content.link}
             className="modal-link"
             onClick={() => toggleModal()}
           >
-            {redirectText}
-          </a>
+            {content.linkText}
+          </NavLink>
         </Dialog.Panel>
       </Dialog>
     </Transition>

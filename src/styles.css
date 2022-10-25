@@ -32,10 +32,13 @@
 
 .modal-isValid{
     color: rgb(59, 165, 70);
+    width: 100px;
+    height: 100px;
 }
 
 button{
     padding: 1rem 2rem;
     border-radius: 40px;
     border: 1px solid rgba(0,0,0, 0.2);
+    cursor: pointer;
 }
