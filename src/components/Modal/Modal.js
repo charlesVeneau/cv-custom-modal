@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { CheckCircleIcon } from '../CheckCircleIcon';
 import { Xmark } from '../Xmark/Xmark';
-// import { Dialog, Transition } from '@headlessui/react';
+import "../../styles.css";
 import { NavLink } from 'react-router-dom';
 
 /**
