@@ -1,8 +1,8 @@
+import React, { useRef } from 'react';
 import { CheckCircleIcon } from '../CheckCircleIcon';
-import { Xmark } from '../Xmark';
-import { Dialog, Transition } from '@headlessui/react';
+import { Xmark } from '../Xmark/Xmark';
+// import { Dialog, Transition } from '@headlessui/react';
 import { NavLink } from 'react-router-dom';
-import { Fragment, useRef } from 'react';
 
 /**
  * It's a modal that displays a success message when an employee is added
@@ -11,26 +11,19 @@ import { Fragment, useRef } from 'react';
 export const  Modal = ({ isOpen, toggleModal, content }) => {
   const closeButton = useRef(null);
 
+  function closeParentModal(event){
+    event.target.classList.contains('modal-block') ? toggleModal() : undefined;
+  }
+
 
   if(isOpen){
     return (
-    <Transition
-      show={isOpen}
-      enter="transition duration-100 ease-out"
-      enterFrom="transform scale-95 opacity-0"
-      enterTo="transform scale-100 opacity-100"
-      leave="transition duration-75 ease-out"
-      leaveFrom="transform scale-100 opacity-100"
-      leaveTo="transform scale-95 opacity-0"
-      as={Fragment}
-    >
-      <Dialog
-        initialFocus={closeButton}
-        onClose={() => toggleModal()}
+      <div
+        onClick={(e) => closeParentModal(e)}
         id="modal-block"
         className="modal-block"
       >
-        <Dialog.Panel
+        <div
           id="modal-elt"
           className="modal-elt"
         >
@@ -39,7 +32,7 @@ export const  Modal = ({ isOpen, toggleModal, content }) => {
             toggleModal={toggleModal}
           />
           <CheckCircleIcon/>
-          <Dialog.Title className="modal-title">{content.modalTitle}</Dialog.Title>
+          <h3 className="modal-title">{content.modalTitle}</h3>
           <p>{content.modalText}</p>
           <NavLink
             to={content.link}
@@ -48,8 +41,7 @@ export const  Modal = ({ isOpen, toggleModal, content }) => {
           >
             {content.linkText}
           </NavLink>
-        </Dialog.Panel>
-      </Dialog>
-    </Transition>
+        </div>
+      </div>
   );}
 }
