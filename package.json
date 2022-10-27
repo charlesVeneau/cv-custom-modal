@@ -1,6 +1,6 @@
 {
   "name": "cv-custom-modal",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "OC project 14 custom Modal react library",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -23,7 +23,6 @@
   "devDependencies": {
     "@babel/core": "^7.19.6",
     "@babel/preset-react": "^7.18.6",
-    "@headlessui/react": "^1.7.3",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@storybook/addon-actions": "^6.5.12",
     "@storybook/addon-essentials": "^6.5.12",
@@ -45,6 +44,7 @@
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.2"
   }
 }
