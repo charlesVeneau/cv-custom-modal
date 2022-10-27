@@ -12,7 +12,8 @@ export const  Modal = ({ isOpen, toggleModal, content }) => {
   const closeButton = useRef(null);
 
   function closeParentModal(event){
-    event.target.classList.contains('modal-block') ? toggleModal() : undefined;
+    if(event.target.classList.contains('modal-block'))
+      toggleModal()
   }
 
 
