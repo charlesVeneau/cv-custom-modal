@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { CheckCircleIcon } from '../CheckCircleIcon';
 import { Xmark } from '../Xmark/Xmark';
 import "../../styles.css";
@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
  * @returns A modal component that is rendered when the isSaved state is true.
  */
 export const  Modal = ({ isOpen, toggleModal, content }) => {
-  const closeButton = useRef(null);
+  // const closeButton = useRef(null);
 
   function closeParentModal(event){
     if(event.target.classList.contains('modal-block'))
@@ -29,7 +29,6 @@ export const  Modal = ({ isOpen, toggleModal, content }) => {
           className="modal-elt"
         >
           <Xmark
-            ref={closeButton}
             toggleModal={toggleModal}
           />
           <CheckCircleIcon/>

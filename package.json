@@ -1,6 +1,6 @@
 {
   "name": "cv-custom-modal",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "description": "OC project 14 custom Modal react library",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
