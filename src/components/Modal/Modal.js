@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircleIcon } from '../CheckCircleIcon';
+import { ErrorIcon } from '../ErrorIcon';
 import { Xmark } from '../Xmark/Xmark';
 import "../../styles.css";
 import { NavLink } from 'react-router-dom';
@@ -8,12 +9,16 @@ import { NavLink } from 'react-router-dom';
  * It's a modal that displays a success message when an employee is added
  * @returns A modal component that is rendered when the isSaved state is true.
  */
-export const  Modal = ({ isOpen, toggleModal, content }) => {
+export const  Modal = ({ isOpen, closeModal, content }) => {
   // const closeButton = useRef(null);
 
+  /**
+   * If the user clicks on the modal-block element, close the modal
+   * @param event - The event object that is passed to the function.
+   */
   function closeParentModal(event){
     if(event.target.classList.contains('modal-block'))
-      toggleModal()
+      closeModal()
   }
 
 
@@ -29,15 +34,15 @@ export const  Modal = ({ isOpen, toggleModal, content }) => {
           className="modal-elt"
         >
           <Xmark
-            toggleModal={toggleModal}
+            closeModal={closeModal}
           />
-          <CheckCircleIcon/>
+          {content.status === "success"? <CheckCircleIcon/> : <ErrorIcon/> }
           <h3 className="modal-title">{content.modalTitle}</h3>
           <p>{content.modalText}</p>
           <NavLink
             to={content.link}
             className="modal-link"
-            onClick={() => toggleModal()}
+            onClick={() => closeModal()}
           >
             {content.linkText}
           </NavLink>

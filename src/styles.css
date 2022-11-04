@@ -35,6 +35,11 @@
     width: 100px;
     height: 100px;
 }
+.modal-isNotValid{
+    color: rgb(207, 39, 50);
+    width: 100px;
+    height: 100px;
+}
 
 /* button{
     padding: 1rem 2rem;

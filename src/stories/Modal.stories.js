@@ -14,17 +14,21 @@ stories.add('App', ()=>{
         "linkText": "noWhere",
         "modalTitle": "Succes !",
         "modalText": "Employee added successfully!",
-        "status": "success"
+        "status": "error"
     }
 
-    function toggleModal(){
-        setIsOpen((isOpen) => !isOpen);
+    function closeModal(){
+        setIsOpen(false);
+    }
+
+    function openModal(){
+        setIsOpen(true)
     }
 
     return (
         <BrowserRouter>
-        <Modal isOpen={isOpen} toggleModal={toggleModal} content={content} />
-        <button onClick={toggleModal}>{isOpen ? "Hide" : "Show"}</button>
+        <Modal isOpen={isOpen} closeModal={closeModal} content={content} />
+        <button onClick={openModal}>{isOpen ? "Hide" : "Show"}</button>
         </BrowserRouter>
     )
 })
